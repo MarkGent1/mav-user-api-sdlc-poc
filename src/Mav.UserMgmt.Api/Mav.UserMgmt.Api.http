@@ -1,0 +1,6 @@
+@Mav.UserMgmt.Api_HostAddress = http://localhost:5023
+
+GET {{Mav.UserMgmt.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

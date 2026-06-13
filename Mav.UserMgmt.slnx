@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+  <Project Path="src/Mav.UserMgmt.Api/Mav.UserMgmt.Api.csproj" Id="3de0553c-705e-4556-b86f-3b7e1c653401" />
+</Solution>

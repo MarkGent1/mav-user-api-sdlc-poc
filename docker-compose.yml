@@ -1,0 +1,6 @@
+services:
+  mav.usermgmt.api:
+    image: ${DOCKER_REGISTRY-}mavusermgmtapi
+    build:
+      context: .
+      dockerfile: src/Mav.UserMgmt.Api/Dockerfile
