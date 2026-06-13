@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/tests/">
+    <Project Path="tests/Mav.UserMgmt.Api.Component.Tests/Mav.UserMgmt.Api.Component.Tests.csproj" Id="d9fe838a-badc-425b-9997-872186956750" />
+    <Project Path="tests/Mav.UserMgmt.Api.Integration.Tests/Mav.UserMgmt.Api.Integration.Tests.csproj" Id="3d3fc98f-d205-4dbd-99f4-50e76ebfc22a" />
+    <Project Path="tests/Mav.UserMgmt.Api.Unit.Tests/Mav.UserMgmt.Api.Unit.Tests.csproj" Id="5f0f4854-b3ea-441b-8c87-36e70e993b7b" />
+  </Folder>
   <Project Path="docker-compose.dcproj">
     <Build />
   </Project>
