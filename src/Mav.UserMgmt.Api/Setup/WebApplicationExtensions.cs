@@ -1,4 +1,6 @@
-﻿namespace Mav.UserMgmt.Api.Setup;
+using Microsoft.AspNetCore.Authorization;
+
+namespace Mav.UserMgmt.Api.Setup;
 
 public static class WebApplicationExtensions
 {
@@ -7,7 +9,6 @@ public static class WebApplicationExtensions
         var env = app.Services.GetRequiredService<IWebHostEnvironment>();
         var applicationLifetime = app.Services.GetRequiredService<IHostApplicationLifetime>();
         var logger = app.Services.GetRequiredService<ILogger<Program>>();
-        var configuration = app.Services.GetRequiredService<IConfiguration>();
 
         if (logger.IsEnabled(LogLevel.Information))
         {

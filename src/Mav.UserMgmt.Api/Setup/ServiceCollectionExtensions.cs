@@ -1,4 +1,7 @@
-﻿namespace Mav.UserMgmt.Api.Setup;
+using Mav.UserMgmt.Api.Data;
+using Mav.UserMgmt.Api.Services;
+
+namespace Mav.UserMgmt.Api.Setup;
 
 public static class ServiceCollectionExtensions
 {
@@ -6,5 +9,8 @@ public static class ServiceCollectionExtensions
     {
         services.AddControllers();
         services.AddOpenApi();
+
+        services.AddScoped<IDatabaseConnectionChecker, DatabaseConnectionChecker>();
+        services.AddScoped<IHealthCheckService, HealthCheckService>();
     }
 }
