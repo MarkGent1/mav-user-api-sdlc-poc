@@ -31,3 +31,5 @@ static void ConfigureBuilder(WebApplicationBuilder builder)
 
     builder.Services.ConfigureApi(builder.Configuration);
 }
+
+public partial class Program { }
