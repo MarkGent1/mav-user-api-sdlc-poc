@@ -23,7 +23,6 @@ public sealed class HealthCheckService : IHealthCheckService
         var dependencies = new Dictionary<string, DependencyHealthStatus>();
         var overallHealthy = true;
 
-        // Check each dependency and collect results
         var selfCheck = await CheckSelfAsync(cancellationToken);
         dependencies["self"] = selfCheck;
 
@@ -47,12 +46,10 @@ public sealed class HealthCheckService : IHealthCheckService
     {
         var stopwatch = Stopwatch.StartNew();
 
-        // Basic self-check: application is running
         var status = new DependencyHealthStatus
         {
             Status = HealthStatus.Healthy,
-            Description = "Application is running",
-            DurationMs = stopwatch.ElapsedMilliseconds
+            Description = "Application is running"
         };
 
         stopwatch.Stop();

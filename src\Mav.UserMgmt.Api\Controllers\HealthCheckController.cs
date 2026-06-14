@@ -27,7 +27,7 @@ public sealed class HealthCheckController : ControllerBase
     /// </summary>
     /// <param name="cancellationToken">A cancellation token.</param>
     /// <returns>
-    /// HTTP 200 with a <see cref="HealthCheckResponse"/> payload when healthy;
+    /// HTTP 200 with a <see cref="HealthCheckResponse"/> payload when healthy or degraded;
     /// HTTP 503 with the same payload when unhealthy.
     /// </returns>
     [HttpGet]
