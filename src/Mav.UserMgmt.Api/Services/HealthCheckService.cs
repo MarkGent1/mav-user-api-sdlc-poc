@@ -16,12 +16,17 @@ public class HealthCheckService : IHealthCheckService
 
     public HealthCheckResponse GetHealthStatus()
     {
+        var version = typeof(HealthCheckService).Assembly
+            .GetName()
+            .Version?
+            .ToString() ?? "1.0.0.0";
+
         return new HealthCheckResponse
         {
             Status = "Healthy",
             Timestamp = DateTime.UtcNow,
-            ApplicationName = _environment.ApplicationName,
-            EnvironmentName = _environment.EnvironmentName
+            Environment = _environment.EnvironmentName,
+            Version = version
         };
     }
 }
