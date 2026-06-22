@@ -1,3 +1,4 @@
+using Mav.UserMgmt.Api.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mav.UserMgmt.Api.Controllers;
@@ -6,13 +7,17 @@ namespace Mav.UserMgmt.Api.Controllers;
 [Route("health")]
 public class HealthCheckController : ControllerBase
 {
+    private readonly IHealthCheckService _healthCheckService;
+
+    public HealthCheckController(IHealthCheckService healthCheckService)
+    {
+        _healthCheckService = healthCheckService;
+    }
+
     [HttpGet]
     public IActionResult Get()
     {
-        return Ok(new
-        {
-            status = "Healthy",
-            timestamp = DateTime.UtcNow
-        });
+        var response = _healthCheckService.GetHealthStatus();
+        return Ok(response);
     }
 }
