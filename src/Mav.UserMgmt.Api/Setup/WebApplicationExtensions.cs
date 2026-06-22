@@ -1,4 +1,4 @@
-﻿namespace Mav.UserMgmt.Api.Setup;
+namespace Mav.UserMgmt.Api.Setup;
 
 public static class WebApplicationExtensions
 {
