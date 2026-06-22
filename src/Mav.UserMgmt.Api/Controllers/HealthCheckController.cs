@@ -17,6 +17,7 @@ public class HealthCheckController : ControllerBase
     }
 
     [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     public IActionResult Get()
     {
         var response = _healthCheckService.GetHealthStatus();

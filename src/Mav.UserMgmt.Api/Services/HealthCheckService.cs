@@ -5,12 +5,13 @@ namespace Mav.UserMgmt.Api.Services;
 
 public class HealthCheckService : IHealthCheckService
 {
-    private readonly IConfiguration _configuration;
+    private const string HealthyStatus = "Healthy";
+    private const string DefaultVersion = "1.0.0.0";
+
     private readonly IWebHostEnvironment _environment;
 
     public HealthCheckService(IConfiguration configuration, IWebHostEnvironment environment)
     {
-        _configuration = configuration;
         _environment = environment;
     }
 
@@ -19,11 +20,11 @@ public class HealthCheckService : IHealthCheckService
         var version = typeof(HealthCheckService).Assembly
             .GetName()
             .Version?
-            .ToString() ?? "1.0.0.0";
+            .ToString() ?? DefaultVersion;
 
         return new HealthCheckResponse
         {
-            Status = "Healthy",
+            Status = HealthyStatus,
             Timestamp = DateTime.UtcNow,
             Environment = _environment.EnvironmentName,
             Version = version
